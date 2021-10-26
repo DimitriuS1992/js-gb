@@ -33,10 +33,16 @@
     let number = +prompt("Введите число: ");
     let numberTen = parseInt(number / 10 % 10);
     let numberUnits = number % 10;
-    let numberHundreds = parseInt(((number - (parseInt(number / 1000)) * 1000)) / 100);
 
-    alert("В числе " + number + " количество сотен: " + numberHundreds + "," + " десятков: " + numberTen + "," +
-      " единиц: " + numberUnits);
+    if (number > 999) {
+      let numberHundreds = parseInt(((number - (parseInt(number / 1000)) * 1000)) / 100);
+      alert("В числе " + number + " количество сотен: " + numberHundreds + "," + " десятков: " + numberTen + "," +
+        " единиц: " + numberUnits);
+    } else if (99 < number <= 999) {
+      let numberHundreds = parseInt(number / 100)
+      alert("В числе " + number + " количество сотен: " + numberHundreds + "," + " десятков: " + numberTen + "," +
+        " единиц: " + numberUnits);
+    }
   </script>
 </body>
 
